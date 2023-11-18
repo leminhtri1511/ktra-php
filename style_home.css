@@ -148,3 +148,8 @@ tr:hover {
     text-decoration: none;
     cursor: pointer;
 }
+
+.custom-btn {
+    width: 70px;
+    /* Điều chỉnh kích thước theo ý muốn của bạn */
+}
