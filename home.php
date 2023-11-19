@@ -66,9 +66,9 @@ require_once 'controller.php';
                             <td><?php echo number_format($product['price'], 0, '.', '.') . " VNĐ"; ?></td>
                             <td>
                                 <!-- Đoạn code thay thế cho link "Delete" -->
-                                <button type="button" class="btn btn-danger del-btn" onclick="deleteProduct(<?php echo $key; ?>)">Delete</button>
-                                <br><br>
                                 <button type="button" class="btn btn-primary edit-btn" onclick="openEditForm(<?php echo $key; ?>)">Edit</button>
+                                <br><br>
+                                <button type="button" class="btn btn-danger del-btn" onclick="deleteProduct(<?php echo $key; ?>)">Delete</button>
 
                             </td>
                         </tr>
