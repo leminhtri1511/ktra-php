@@ -35,17 +35,17 @@ require_once 'controller.php';
         </div>
     </nav>
     <div class="container">
-        <div class="add_product">
-            <h2 class="add_product_text">Add Product</h2>
+        <div class="add_product text-center">
+            <h2>Add Product</h2>
             <form method="post" action="home.php" enctype="multipart/form-data">
-                <input type="text" name="product_name" placeholder="Tên sản phẩm" required>
-                <input type="text" name="product_price" placeholder="Giá sản phẩm" required>
+                <input type="text" name="product_name" placeholder="Name" required>
+                <input type="text" name="product_price" placeholder="Price" required onkeypress="return isNumberKey(event)">
                 <input type="file" name="product_image" accept="image/*" onchange="previewAddProductImage(event)">
                 <img id="addProductPreview" src="" alt="Preview" style="display: none; width: 150px;">
                 <button type="submit" name="add_product" class="btn btn-success">Submit</button>
             </form>
         </div>
-        <div class="product_lits">
+        <div class="product_list text-center">
             <h2>Product List</h2>
             <table>
                 <thead>
@@ -66,9 +66,9 @@ require_once 'controller.php';
                             <td><?php echo number_format($product['price'], 0, '.', '.') . " VNĐ"; ?></td>
                             <td>
                                 <!-- Đoạn code thay thế cho link "Delete" -->
-                                <button type="button" class="btn btn-danger custom-btn" onclick="deleteProduct(<?php echo $key; ?>)">Delete</button>
+                                <button type="button" class="btn btn-danger del-btn" onclick="deleteProduct(<?php echo $key; ?>)">Delete</button>
                                 <br><br>
-                                <button type="button" class="btn btn-primary custom-btn" onclick="openEditForm(<?php echo $key; ?>)">Edit</button>
+                                <button type="button" class="btn btn-primary edit-btn" onclick="openEditForm(<?php echo $key; ?>)">Edit</button>
 
                             </td>
                         </tr>
@@ -99,9 +99,21 @@ require_once 'controller.php';
 
 </body>
 <script>
+    function isNumberKey(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode;
+        if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+            return false;
+        }
+        // Kiểm tra độ dài của chuỗi số
+        var price = document.getElementsByName('product_price')[0].value;
+        if (price.length >= 10) {
+            return false;
+        }
+        return true;
+    }
     // Function to handle deletion of a product
     function deleteProduct(id) {
-        if (confirm("Bạn có chắc chắn muốn xóa sản phẩm này không?")) {
+        if (confirm("Delete this product?")) {
             window.location.href = 'home.php?delete_id=' + id;
         }
     }

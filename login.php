@@ -26,16 +26,18 @@
 
         <button type="submit" name="login">Log In</button>
         <p id="errorMessage" style="color: red; display: none;">Invalid username or password</p>
+        <!-- <br><br> -->
+
+        <!-- <p>Don't have an account? <a href="register.php">Register</a></p> -->
     </form>
     <script>
         function validateLogin() {
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
 
-            
             if (username !== "letri" || password !== "123") {
                 document.getElementById("errorMessage").style.display = "block";
-                return false; 
+                return false;
             }
             return true;
         }

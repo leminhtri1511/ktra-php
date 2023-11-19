@@ -20,24 +20,15 @@ body {
 }
 
 .add_product {
-    width: 500px;
-    padding: 20px;
+    width: 400px;
+    /* padding: 20px; */
     box-sizing: border-box;
 }
 
 .product_list {
-    width: 1000px;
-    padding: 20px;
+    width: 700px;
+    /* padding: 20px; */
     box-sizing: border-box;
-}
-
-
-.add_product_text {
-    float: right;
-    width: 45%;
-
-    margin-right: 15%;
-
 }
 
 .username {
@@ -84,17 +75,19 @@ input[type="submit"]:hover {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    background-color: #f2f2f2;
+    /* margin-top: 20px; */
 }
 
 th,
 td {
     padding: 12px 15px;
-    text-align: left;
+    text-align: center;
     border-bottom: 1px solid #ddd;
 }
 
 th {
+    text-align: center;
     background-color: #f2f2f2;
     color: #555;
     text-transform: uppercase;
@@ -149,7 +142,12 @@ tr:hover {
     cursor: pointer;
 }
 
-.custom-btn {
+.del-btn {
+    width: 70px;
+    /* Điều chỉnh kích thước theo ý muốn của bạn */
+}
+
+.edit-btn {
     width: 70px;
     /* Điều chỉnh kích thước theo ý muốn của bạn */
 }
