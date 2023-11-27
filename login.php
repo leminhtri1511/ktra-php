@@ -17,18 +17,12 @@
     </div>
     <form id="loginForm" method="post" action="home.php" onsubmit="return validateLogin()">
         <h3>Login Here</h3>
-
         <label for="username">Username</label>
         <input type="text" id="username" name="username" placeholder="username" required>
-
         <label for="password">Password</label>
         <input type="password" id="password" name="password" placeholder="password" required>
-
         <button type="submit" name="login">Log In</button>
         <p id="errorMessage" style="color: red; display: none;">Invalid username or password</p>
-        <!-- <br><br> -->
-
-        <!-- <p>Don't have an account? <a href="register.php">Register</a></p> -->
     </form>
     <script>
         function validateLogin() {
